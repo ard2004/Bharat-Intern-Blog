@@ -7,8 +7,15 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <%= for(let i = 0; i < newItems.length; i++){ %>
-            <li> <%= newItems[i] %> </li>
-        <%= } %>
+        <h1><%= kindOfDay%></h1>
+        <ul>
+            <% for(let i = 0; i < newListItems.length; i++){ %>
+                <li> <%= newListItems[i] %> </li>
+            <% } %>
+        </ul>
+        <form action="/" method="post">
+            <input type="text" name="newItem" autocomplete="off">
+            <button type="submit">Add</button>
+        </form>
     </body>
 </html>

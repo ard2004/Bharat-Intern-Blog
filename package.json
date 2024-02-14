@@ -6,7 +6,7 @@
   "author": "captian-Arvoy <accofstardust@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npx tsc server.ts && nodemon server.js"
+    "start": "nodemon server.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
