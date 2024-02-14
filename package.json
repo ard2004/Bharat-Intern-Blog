@@ -1,0 +1,20 @@
+{
+  "name": "Bharat-Intern",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "repository": "https://github.com/portfolio",
+  "author": "captian-Arvoy <accofstardust@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx tsc server.ts && nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
