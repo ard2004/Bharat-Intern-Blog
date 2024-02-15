@@ -1,0 +1,25 @@
+{
+  "name": "Bharat-Intern",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "captian-Arvoy <accofstardust@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx tsc && node ./dist/server.js",
+    "build": "npx tsc"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "dotenv": "^16.4.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.2",
+    "nodemon": "^3.0.3",
+    "router": "^1.3.8",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.17"
+  }
+}
