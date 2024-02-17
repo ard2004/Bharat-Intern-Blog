@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Landing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" >
+        <link rel="stylesheet" href="./styles/style.css" >
+        <%- include('./mainStyle.ejs') %>
+    </head> 
+    <body>
+        <main>
+            <nav id="navBar">
+                <div>Blog Website</div>
+                <div>profile</div>
+            </nav>
+            <section>
+                <div id="blog-list">
+                    <%- include('./card.ejs') %> 
+                </div>
+            </section>  
+        </main>
+
+    </body>
+</html>

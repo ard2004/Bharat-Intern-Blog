@@ -4,13 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv").config();
+const body_parser_1 = __importDefault(require("body-parser"));
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const router = require('./routes/route');
 const { connectDB } = require('./config/db');
+const routerController = require("./controller/fetchBlog");
+app.use(body_parser_1.default.urlencoded({ extended: true }));
 const PORT = 5001;
 connectDB();
-app.use('/', router);
+app.set('view engine', 'ejs');
+app.use('/blog', router);
+app.use('/', routerController);
 app.listen(PORT, () => {
     console.log(`listening at http://localhost:${PORT}`);
 });

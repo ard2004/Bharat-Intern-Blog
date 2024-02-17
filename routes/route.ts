@@ -6,7 +6,7 @@ const router = router_();
  * /edit-article
  * /:article-name
  * */
-router.get('/blog/:article',(req:Request,res:Response) => {
+router.get('/:article',(req:Request,res:Response) => {
     console.log(`accessing ${req.params.article}`)
     res.sendStatus(200);
 })
