@@ -11,6 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const Article = require('../models/article.model');
 const createArticle = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.sendStatus(200).send("<h1>Created Article</h1>");
+    res.send({
+        status: 200,
+        message: `${req.params.createarticle}`
+    });
 });
 module.exports = createArticle;
