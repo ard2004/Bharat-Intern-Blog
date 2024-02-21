@@ -18,6 +18,6 @@ const articleSchema = new Schema<article_>({
         required: true,
         type: Date
     }
-})
+}, {timestamps: true })
 const Article = mongoose.model('Article', articleSchema);
 module.exports = Article;

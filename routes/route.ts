@@ -9,9 +9,11 @@ const fetchBlog = require('../controller/fetchBlog.controller')
  * /:article-name
  * */
 router.get("/create",(req:Request,res:Response)=>{
-    res.render('newBlog');
+    const name = req.params.name;
+    
+    res.render('newBlog', {title: name});
 })
-router.route("/create/:createarticle").post(createArticle);
+router.route("/new-blog/").post(createArticle);
 router.route('/').get(fetchBlog);
 // router.post('/blog/create-article',(req:Request))
 module.exports = router; 

@@ -1,7 +1,7 @@
 {
   "name": "Bharat-Intern",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "author": "captian-Arvoy <accofstardust@gmail.com>",
   "license": "MIT",
   "scripts": {

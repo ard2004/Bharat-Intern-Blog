@@ -8,10 +8,10 @@ const createArticle = async(req:Request,res:Response) => {
         createdAt: req.body.createdAt
     })
     article.save().then(()=>{
+        console.log("saved")
         res.render("success",{
             blog_title: req.body.title
         });
-        console.log("blog saved successfully")
     })
     .catch((err: Error)=>{
         console.log(`error saving the blog ${err}`)

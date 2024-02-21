@@ -5,10 +5,9 @@ let status = 200;
 
 const fetchBlog = async (req:Request,res:Response) => {
     try{
-        const articles = Article.find({}) 
+        const articles = await Article.find({}) 
         res.render("card.ejs",{
-            blog_title: "blog title",
-            blog_body: "blog body "
+            articles,
         });
     } catch(e) {
         res.send({

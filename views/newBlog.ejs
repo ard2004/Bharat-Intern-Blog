@@ -12,6 +12,7 @@
             body,html{
                 width: 100%;
                 height: 100%;
+                background-color: #080b21;
             }
             form{
                 display: flex;
@@ -35,8 +36,11 @@
                 font-weight: 600;
                 border-radius: 1px solid grey;
                 resize: none;
+                color: #fbfbfe;
+                background-color: #42414d;
             }
             label{
+                color: #fbfbfe;
                 margin: 10px 0 10px 0;
             }
             button[type="submit"]:hover{
@@ -46,19 +50,28 @@
     </head>
     <body>
         <main>
-            <form action="/blog/create/<%= title %>" method="post">
+            <form method="get" enctype="application/x-www-form-urlencoded">
                 <label for="title">Title of the blog</label>
-                <input type="text" id="title" name="title" placeholder="Type your title" spellcheck="true">
+                <input type="text" id="title" name="title" placeholder="Type your title" spellcheck="true" value=<%= title %> required>
                     
                 <label for="article">Enter your article</label>
-                <textarea id="article" placeholder="Type your blog article" spellcheck="true" size="30"  rows="200" required></textarea>
+                <textarea id="article" name="article" placeholder="Type your blog article" spellcheck="true" size="30"  rows="200" required></textarea>
 
                 <label for="createdAt">Created at</label>
-                <input type="date" id="createdAt">
+                <input type="date" id="createdAt" name="createdAt">
 
-                <button type="submit">publish</button>
+                <button type="submit" onclick=handleSubmit()>publish</button>
             </form>
         </main>
+        <script>
+            function handleSubmit(){
+                let form = document.querySelector("form")
+                let title = document.querySelector("#title").value
+                form.action = `/blog/new-blog/${title}`
+                form.submit()
+                console.warn(form.action);
+            }
+        </script>
     </body>
     <script>
     document.addEventListener('DOMContentLoaded',()=>{
@@ -66,8 +79,9 @@
         textArea.rows = Math.floor(window.innerHeight / 40);
     })
     </script>
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var currentDate = new Date().toISOString().split('T')[0];
             document.getElementById('createdAt').value = currentDate;
         });

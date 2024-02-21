@@ -7,14 +7,13 @@
         <%- include('./cardStyle.ejs') %>
     </head>
     <body>
-
-        <% for(let i = 0; i < 5; i++){ %>
+        <% for(let i = 0; i < articles.length; i++){ %>
             <div id="card">
                 <div id="blogTitle">
-                    <%= blog_title %>
+                    <%= articles[i].title %>
                 </div>
                 <div id="blogBody">
-                    <%= blog_body %>
+                    <%= articles[i].article %>
                 </div>
             </div>
         <% } %>
