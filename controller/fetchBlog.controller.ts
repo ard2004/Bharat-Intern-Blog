@@ -3,13 +3,12 @@ const blogFetchRouter = express.Router();
 const Article = require("../models/article.model");
 let status = 200;
 
-console.log("Running fetchBlog Controller")
 const fetchBlog = async (req:Request,res:Response) => {
     try{
         const articles = Article.find({}) 
-        res.send({
-            status: 200,
-            message: `success: ${articles}`
+        res.render("card.ejs",{
+            blog_title: "blog title",
+            blog_body: "blog body "
         });
     } catch(e) {
         res.send({

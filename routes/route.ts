@@ -8,7 +8,10 @@ const fetchBlog = require('../controller/fetchBlog.controller')
  * /edit-article
  * /:article-name
  * */
-router.route("/create/:createarticle").get(createArticle);
+router.get("/create",(req:Request,res:Response)=>{
+    res.render('newBlog');
+})
+router.route("/create/:createarticle").post(createArticle);
 router.route('/').get(fetchBlog);
 // router.post('/blog/create-article',(req:Request))
 module.exports = router; 
