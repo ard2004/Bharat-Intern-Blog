@@ -50,9 +50,9 @@
     </head>
     <body>
         <main>
-            <form method="get" enctype="application/x-www-form-urlencoded">
+            <form method="post" enctype="application/x-www-form-urlencoded">
                 <label for="title">Title of the blog</label>
-                <input type="text" id="title" name="title" placeholder="Type your title" spellcheck="true" value=<%= title %> required>
+                <input type="text" id="title" name="title" placeholder="Type your title" spellcheck="true" required>
                     
                 <label for="article">Enter your article</label>
                 <textarea id="article" name="article" placeholder="Type your blog article" spellcheck="true" size="30"  rows="200" required></textarea>
@@ -67,9 +67,8 @@
             function handleSubmit(){
                 let form = document.querySelector("form")
                 let title = document.querySelector("#title").value
-                form.action = `/blog/new-blog/${title}`
+                form.action = `/blog/create/${title}`
                 form.submit()
-                console.warn(form.action);
             }
         </script>
     </body>
