@@ -6,7 +6,7 @@ let status = 200;
 const fetchBlog = async (req:Request,res:Response) => {
     try{
         const articles = await Article.find({}) 
-        res.render("card.ejs",{
+        res.render("layout.ejs",{
             articles,
         });
     } catch(e) {

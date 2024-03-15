@@ -8,6 +8,7 @@
     </head>
     <body>
         <% for(let i = 0; i < articles.length; i++){ %>
+            <a href="/blog/view/<%=articles[i]._id%>" style="text-decoration: none;">
             <div id="card">
                 <div id="blogTitle">
                     <%= articles[i].title %>
@@ -16,6 +17,7 @@
                     <%= articles[i].article %>
                 </div>
             </div>
+            </a>
         <% } %>
     </body>
 </html>
