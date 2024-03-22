@@ -6,7 +6,7 @@ const path = require("path")
 const {connectDB}= require('./config/db');
 const router = require('./routes/route')
 app.use(bodyParser.urlencoded({extended: true}));
-const PORT: number = 5001;
+const PORT: number | string  = process.env.PORT ?? 8001;
 connectDB()
 app.set('view engine','ejs');
 app.set("views",path.resolve("./views"))

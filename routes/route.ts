@@ -4,6 +4,7 @@ const router = router_();
 const createArticle = require("../controller/createBlog.controller")
 const fetchBlog = require('../controller/fetchBlog.controller')
 const view = require("../controller/view.controller")
+const profileView = require("../controller/profileViewer.controller")
 /*
  * /create-article
  * /edit-article
@@ -12,6 +13,7 @@ const view = require("../controller/view.controller")
 router.get("/create",(req:Request,res:Response)=>{
     res.render('newBlog');
 })
+router.route("/profile").get(profileView)
 router.route("/view/:blog_id").get(view)
 router.route("/create/:title").post(createArticle);
 router.route('/').get(fetchBlog);
