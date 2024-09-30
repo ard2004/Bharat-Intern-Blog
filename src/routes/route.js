@@ -1,4 +1,4 @@
-import {Request,Response} from 'express';
+import createArticle from "../contr"
 const router_ = require("router");
 const router = router_();
 const createArticle = require("../controller/createBlog.controller")
@@ -10,7 +10,7 @@ const profileView = require("../controller/profileViewer.controller")
  * /edit-article
  * /:article-name
  * */
-router.get("/create",(req:Request,res:Response)=>{
+router.get("/create",(req,res)=>{
     res.render('newBlog');
 })
 router.route("/profile").get(profileView)
