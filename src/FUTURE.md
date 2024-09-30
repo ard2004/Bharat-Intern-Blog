@@ -1,0 +1,4 @@
+- To make it my own personal portfolio website, writing what I learnt, my own shelf
+- Hide blog
+- save Draft
+- A better UI
